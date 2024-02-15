@@ -1,13 +1,16 @@
 package interview_tasks_paysafe.object_oriented.softuni.java_oop.exercises.task_student_management;
 
+import java.io.Serializable;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-public class Student implements Comparable<Student>{
+public class Student implements Comparable<Student>, Serializable {
     private Long id;
     private String name;
     private int age;
     private Set<Course> courses;
+
+    private double averageGrade;
 
     public Student(Long id, String name, int age) {
         this.id = id;
@@ -65,5 +68,13 @@ public class Student implements Comparable<Student>{
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age ;
+    }
+
+    public double getAverageGrade() {
+        return averageGrade;
+    }
+
+    public void setAverageGrade(double averageGrade) {
+        this.averageGrade = averageGrade;
     }
 }

@@ -6,6 +6,7 @@ import interview_tasks_paysafe.object_oriented.softuni.java_oop.exercises.task_s
 import java.util.*;
 
 public class SchoolClass extends AbstractSchool implements Enrollment,Grade{
+
     private final Map<Student, Map<Course,Double>> studentsCourses;
 
     public SchoolClass() {
@@ -51,4 +52,9 @@ public class SchoolClass extends AbstractSchool implements Enrollment,Grade{
         }
         return null;
     }
+
+    public Map<Course, Double> getStudentCourses(Student student){
+        return studentsCourses.getOrDefault(student,new LinkedHashMap<>());
+    }
+
 }
